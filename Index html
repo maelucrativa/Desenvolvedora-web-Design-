@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Débora Rodrigues de Souza | Desenvolvedora & Designer</title>
+    <title>Débora | Soluções Digitais Premium</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;60700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#D8BFD8', // Rosa Claro Elegante
-                        secondary: '#1a1a1a',
-                        accent: '#f0e6fa',
+                        dark: '#0A0A0A',
+                        darker: '#050505',
+                        accent: '#3B82F6',
+                        light: '#F8FAFC',
                     },
                     fontFamily: {
                         poppins: ['Poppins', 'sans-serif'],
@@ -25,163 +25,120 @@
     </script>
     <style type="text/tailwindcss">
         @layer utilities {
-            .content-auto { content-visibility: auto; }
-            .text-shadow { text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
-            .transition-custom { transition: all 0.3s ease; }
+            .text-gradient {
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            .glass {
+                background: rgba(255, 255, 255, 0.03);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+            }
         }
     </style>
 </head>
-<body class="font-poppins bg-white text-secondary overflow-x-hidden">
+<body class="bg-dark text-light font-poppins antialiased overflow-x-hidden">
 
-    <!-- Navegação -->
-    <nav class="fixed w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-primary">D.R.S.</div>
-            <div class="hidden md:flex gap-8">
-                <a href="#inicio" class="hover:text-primary transition-custom">Início</a>
-                <a href="#sobre" class="hover:text-primary transition-custom">Sobre Mim</a>
-                <a href="#servicos" class="hover:text-primary transition-custom">Serviços</a>
-                <a href="#contato" class="hover:text-primary transition-custom">Contato</a>
+    <!-- Navbar -->
+    <nav class="fixed w-full glass z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 text-gradient">Débora.Dev</div>
+                <a href="https://wa.me/5511912128573" target="_blank" class="bg-green-600 hover:bg-green-700 px-6 py-2 rounded-full font-semibold transition-all transform hover:scale-105 shadow-lg shadow-green-900/20">
+                    Fale Comigo
+                </a>
             </div>
-            <button class="md:hidden text-2xl">
-                <i class="fas fa-bars"></i>
-            </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="inicio" class="min-h-screen flex items-center justify-center pt-16 bg-gradient-to-br from-white to-accent">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-[clamp(2.5rem,6vw,4rem)] font-bold mb-6">
-                Olá, eu sou <span class="text-primary">Débora Rodrigues de Souza</span>
-            </h1>
-            <p class="text-[clamp(1.2rem,3vw,1.5rem)] text-gray-600 max-w-3xl mx-auto mb-10">
-                Desenvolvedora Web, Designer Gráfico e Especialista em Marketing Digital
-            </p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="#servicos" class="bg-primary hover:bg-primary/80 text-white font-semibold py-3 px-8 rounded-full transition-custom shadow-lg">
-                    Conheça meus serviços
-                </a>
-                <a href="#sobre" class="border-2 border-primary text-primary hover:bg-primary/10 font-semibold py-3 px-8 rounded-full transition-custom">
-                    Saiba mais sobre mim
-                </a>
+    <section class="pt-32 pb-20 px-4">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <h2 class="text-blue-400 font-semibold tracking-wider uppercase">Soluções Digitais Completas</h2>
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight">
+                    Design, Sites <br>
+                    <span class="bg-gradient-to-r from-blue-400 to-indigo-600 text-gradient">& Marketing</span>
+                </h1>
+                <p class="text-gray-400 text-lg leading-relaxed">
+                    Transformo ideias em presença digital forte. Do conceito visual ao funcionamento perfeito, ofereço soluções completas para seu negócio bombar na internet.
+                </p>
+                <div class="pt-4 flex flex-col sm:flex-row gap-4">
+                    <a href="https://wa.me/5511912128573" target="_blank" class="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 px-8 py-4 rounded-full text-xl font-bold transition-all shadow-xl shadow-green-900/30">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="currentColor" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 31 223.9 31c-32.4 0-63.3 8.1-91.3 23.4c-27.9 15.3-50.9 36.9-68.2 62.8C45.1 143.3 35 181.8 35 221.5c0 39.7 10.1 78.2 29.4 112.3c19.2 34.1 46.6 63.1 80.2 84.3c33.6 21.2 71.4 32 111.3 32c40.1 0 78.1-10.9 111.3-32c33.6-21.2 61-50.2 80.2-84.3c19.2-34.1 29.4-72.6 29.4-112.3c.1-59.4-20-115.1-59.9-156.4zM384 221.5c0 42.6-11.9 81.3 35.6 113.1c-23.7 31.8-56.4 55.1-96.5 67.1c-40.1 12-82.3 9.1-119.9-8.3c-37.6-17.4-68.4-47.1-88.8-85.1C19.9 269.8 9 231.1 9 188.5c0-42.6 11.9-81.3 35.6-113.1C68.3 43.6 101 20.3 141.1 8.3C181.2-3.7 223.4-0.9 261 16.5c37.6 17.4 68.4 47.1 88.8 85.1C374.1 140.2 384 178.9 384 221.5zM288 184v40c0 8.8-7.2 16-16 16h-32v48c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-48h-32c-8.8 0-16-7.2-16-16v-40c0-8.8 7.2-16 16-16h32v-32c0-8.8 7.2-16 16 16v32h32c8.8 0 16 7.2 16 16v32h32c8.8 0 16 7.2 16 16z"/></svg>
+                        Vamos conversar e fechar negócio!
+                    </a>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="absolute inset-0 bg-blue-500/10 blur-3xl rounded-full"></div>
+                <img src="https://defiant-copper-7oulakwmgz.edgeone.app/09e5cd9e308a62496a8700b2f0be10a7.jpg" alt="Desenvolvedora e Designer" class="relative rounded-2xl shadow-2xl border border-gray-800 w-full h-auto object-cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- O que eu faço -->
+    <section class="py-20 px-4 bg-darker">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold">O que eu <span class="text-blue-500">faço?</span></h2>
+                <p class="text-gray-500 mt-4">Serviços completos para sua marca se destacar no mercado</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass p-8 rounded-2xl hover:border-blue-500/50 transition-all hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-blue-900/30 text-blue-400 rounded-lg flex items-center justify-center text-2xl mb-6">🎨</div>
+                    <h3 class="text-xl font-bold mb-3">Design Gráfico</h3>
+                    <p class="text-gray-500">Criação de identidade visual, logotipos, materiais impressos e digitais que transmitem profissionalismo e elegância.</p>
+                </div>
+
+                <div class="glass p-8 rounded-2xl hover:border-blue-500/50 transition-all hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-blue-900/30 text-blue-400 rounded-lg flex items-center justify-center text-2xl mb-6">💻</div>
+                    <h3 class="text-xl font-bold mb-3">Desenvolvimento de Sites</h3>
+                    <p class="text-gray-500">Elaboração de sites modernos, rápidos, responsivos e otimizados para converter visitantes em clientes.</p>
+                </div>
+
+                <div class="glass p-8 rounded-2xl hover:border-blue-500/50 transition-all hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-blue-900/30 text-blue-400 rounded-lg flex items-center justify-center text-2xl mb-6">📈</div>
+                    <h3 class="text-xl font-bold mb-3">Marketing Digital</h3>
+                    <p class="text-gray-500">Estratégias completas para aumentar seu alcance, engajar seu público e alavancar suas vendas na internet.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Sobre Mim -->
-    <section id="sobre" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-1/2">
-                    <img src="https://source.unsplash.com/600x600/?woman,workspace,laptop" alt="Débora Rodrigues" class="rounded-2xl shadow-xl w-full max-w-md mx-auto">
-                </div>
-                <div class="md:w-1/2">
-                    <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold mb-6">Sobre Mim</h2>
-                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
-                        Sou uma profissional apaixonada pelo que faço, com <strong class="text-primary">9 anos de experiência</strong> no mercado. 
-                        Minha trajetória começou em <strong class="text-primary">Portugal</strong>, onde desenvolvi um olhar atento aos detalhes, 
-                        qualidade e excelência, características que levo comigo em cada projeto.
-                    </p>
-                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
-                        Atuo como <strong>Desenvolvedora Web</strong>, criando sites modernos e funcionais, e também sou especialista em 
-                        <strong>Marketing Digital</strong>, ajudando marcas a crescerem online. Além disso, trabalho com <strong>Design Gráfico</strong>, 
-                        criação de conteúdo, edição de fotos e elaboração de <strong>Currículos Profissionais</strong> de alto padrão.
-                    </p>
-                    <p class="text-lg text-gray-700 leading-relaxed">
-                        Faço um pouco de tudo, sempre com muito amor, dedicação e o padrão de qualidade que você merece! ✨
-                    </p>
-                </div>
+    <section class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold">Sobre <span class="text-blue-500">Mim</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto mt-4 rounded-full"></div>
             </div>
-        </div>
-    </section>
-
-    <!-- Serviços -->
-    <section id="servicos" class="py-20 bg-accent/50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-center mb-16">O que eu faço?</h2>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Serviço 1 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-custom group">
-                    <div class="text-5xl text-primary mb-6 group-hover:scale-110 transition-custom">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Desenvolvimento de Sites</h3>
-                    <p class="text-gray-600">Criação de sites profissionais, lojas virtuais, páginas de vendas e portfólios totalmente responsivos.</p>
-                </div>
-
-                <!-- Serviço 2 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-custom group">
-                    <div class="text-5xl text-primary mb-6 group-hover:scale-110 transition-custom">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Design Gráfico</h3>
-                    <p class="text-gray-600">Criação de artes, identidade visual, design para redes sociais, edição de imagens e muito mais.</p>
-                </div>
-
-                <!-- Serviço 3 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-custom group">
-                    <div class="text-5xl text-primary mb-6 group-hover:scale-110 transition-custom">
-                        <i class="fas fa-file-alt"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Currículos Profissionais</h3>
-                    <p class="text-gray-600">Elaboração e personalização de currículos de alto padrão para você se destacar no mercado.</p>
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                    <img src="https://experimental-chocolate-cgyigf9ewf.edgeone.app/6848796da6419063a381ee97bbc95e9d.jpg" alt="Débora - Quem Sou Eu" class="relative w-full h-auto rounded-2xl border border-gray-800 shadow-2xl">
                 </div>
                 
-                <!-- Serviço 4 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-custom group">
-                    <div class="text-5xl text-primary mb-6 group-hover:scale-110 transition-custom">
-                        <i class="fas fa-bullhorn"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Marketing Digital</h3>
-                    <p class="text-gray-600">Estratégias completas, tráfego pago, criação de conteúdo e gestão de redes sociais.</p>
-                </div>
-
-                 <!-- Serviço 5 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-custom group">
-                    <div class="text-5xl text-primary mb-6 group-hover:scale-110 transition-custom">
-                        <i class="fas fa-image"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Edição de Fotos</h3>
-                    <p class="text-gray-600">Tratamento e edição profissional de imagens para deixar tudo com a sua cara.</p>
-                </div>
-
-                 <!-- Serviço 6 -->
-                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-custom group">
-                    <div class="text-5xl text-primary mb-6 group-hover:scale-110 transition-custom">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Criação de Conteúdo</h3>
-                    <p class="text-gray-600">Produção de conteúdo digital para alavancar sua presença online.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contato -->
-    <section id="contato" class="py-20 bg-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold mb-8">Vamos trabalhar juntos?</h2>
-            <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
-                Entre em contato comigo e vamos criar algo incrível para o seu projeto!
-            </p>
-            <div class="flex justify-center gap-6 text-3xl">
-                <a href="#" class="text-primary hover:text-secondary transition-custom"><i class="fab fa-whatsapp"></i></a>
-                <a href="#" class="text-primary hover:text-secondary transition-custom"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="text-primary hover:text-secondary transition-custom"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="text-primary hover:text-secondary transition-custom"><i class="fas fa-envelope"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Rodapé -->
-    <footer class="bg-secondary text-white py-8">
-        <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2025 Débora Rodrigues de Souza. Todos os direitos reservados.</p>
-            <p class="text-sm mt-2 text-gray-400">Feito com muito carinho e dedicação ✨</p>
-        </div>
-    </footer>
-
-</body>
-</html>
+                <div class="space-y-6">
+                    <h3 class="text-3xl font-bold text-white">Minha Jornada</h3>
+                    <p class="text-gray-400 text-lg leading-relaxed">
+                        Atualmente moro em <strong class="text-blue-400">Curitiba</strong>, mas minha trajetória profissional é internacional! 🗺️
+                    </p>
+                    <p class="text-gray-400 text-lg leading-relaxed">
+                        Vim diretamente de <strong class="text-blue-400">Portugal</strong> e também construí uma sólida experiência em <strong class="text-blue-400">Minas Gerais</strong>. Hoje, trago essa bagagem cultural e técnica para entregar projetos de alto nível.
+                    </p>
+                    <p class="text-gray-400 text-lg leading-relaxed">
+                        Sou apaixonada por tecnologia e design. Meu objetivo é criar soluções digitais que não só funcionem perfeitamente, mas que também encantem os olhos e gerem resultados reais para o seu negócio.
+                    </p>
+                    
+                    <div class="pt-6 space-y-3">
+                        <a href="mailto:mundofemininomarketing@gmail.com" class="flex items-center gap-3 text-gray-400 hover:text-blue-400 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                            mundofemininomarketing@gmail.com
+                        </a>
+                        <a href="https://wa.me/5511912128573" target="_blank" class="flex items-center gap-3 text-gray-400 hover:text-blue-400 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 31 223.9 31c-32.4 0-63.3 8.1-91.3 23.4c-27.9 15.3-50.9 36.9-68.2 62.8C45.1 143.3 35 181.8 35 221.5c0 39.7 10.1 78.2 29.4 112.3c19.2 34.1 46.6 63.1 80.2 84.3c33.6 21.2 71.4 32 111.3 32c40.1 0 78.1-10.9 111.3-32c33.6-21.2 61-50.2 80.2-84.3c19.2-34.1 29.4-72.6 29.4-112.3c.1-59.4-20-115.1-59.9-156.4z"/></svg>
+                            (11) 91212-8573
