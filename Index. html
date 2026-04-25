@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Débora Rodrigues de Souza | Design de Alto Padrão</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --accent-color: #c5a059;
+            --text-color: #333;
+            --light-bg: #f9f9f9;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            padding: 20px 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .logo {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            color: var(--accent-color);
+        }
+
+        /* Seções Gerais */
+        section {
+            padding: 80px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 3px;
+            background: var(--accent-color);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Sobre */
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        /* Serviços */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--light-bg);
+            padding: 40px;
+            border-top: 4px solid var(--accent-color);
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        /* Contato */
+        .contact-info {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            text-align: center;
+        }
+
+        .contact-item h4 {
+            color: var(--accent-color);
+            margin-bottom: 5px;
+        }
+
+        .btn-whatsapp {
+            display: inline-block;
+            background-color: #25d366;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 30px;
+            font-weight: bold;
+        }
+
+        /* Rodapé e Termos */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 50px 10% 20px;
+            font-size: 0.85rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 30px;
+            margin-bottom: 20px;
+        }
+
+        .legal-section {
+            margin-top: 20px;
+            padding: 20px;
+            background: #222;
+            border-radius: 5px;
+            display: none; /* Escondido por padrão para não poluir, abre via link */
+        }
+
+        .legal-section:target {
+            display: block;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            color: #777;
+        }
+
+        .legal-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            margin-right: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            nav { display: none; } /* Simplificação para mobile */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">DÉBORA RODRIGUES</a>
+        <nav>
+            <a href="#sobre">Sobre</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Débora Rodrigues de Souza</h1>
+        <p>DESIGN GRÁFICO & WEB DESIGN DE ALTO PADRÃO</p>
+    </section>
+
+    <section id="sobre">
+        <h2 class="section-title">Sobre Mim</h2>
+        <div class="about-content">
+            <p>Sou profissional da área de Design, com ampla experiência e conhecimento consolidado no mercado. Especialista em Design Gráfico, domino as ferramentas e técnicas mais modernas do setor, entregando soluções que unem estética refinada e funcionalidade estratégica.</p>
+            <br>
+            <p>Meu compromisso é a materialização da excelência. Cada projeto é tratado com exclusividade, ética e um rigoroso cuidado com os detalhes, garantindo resultados que superam expectativas e fortalecem a identidade de quem confia em meu trabalho.</p>
+        </div>
+    </section>
+
+    <section id="servicos" style="background-color: var(--light-bg);">
+        <h2 class="section-title">Serviços Especializados</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Design Gráfico</h3>
+                <p>Criação de identidade visual completa, logotipos exclusivos, artes para redes sociais, materiais editoriais e publicitários para impressão, além de tratamento avançado de imagens.</p>
+            </div>
+            <div class="service-card">
+                <h3>Web Design</h3>
+                <p>Desenvolvimento de sites institucionais, landing pages de alta conversão (vendas e captura), layouts responsivos e manutenção de estruturas digitais modernas.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato">
+        <h2 class="section-title">Contato e Localização</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <h4>Localização</h4>
+                <p>Curitiba, Paraná, Brasil</p>
+                <small>Atendimento e envios disponíveis para Portugal</small>
+            </div>
+            <div class="contact-item">
+                <h4>E-mail</h4>
+                <p>contato@deborarodrigues.com.br</p> 
+            </div>
+            <div class="contact-item">
+                <h4>WhatsApp</h4>
+                <p>(11) 91212-8573</p>
+            </div>
+        </div>
+        <div style="text-align: center;">
+            <a href="https://wa.me/5511912128573" class="btn-whatsapp">SOLICITAR ORÇAMENTO VIA WHATSAPP</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h4>Débora Rodrigues de Souza</h4>
+                <p>Transformando ideias em experiências visuais memoráveis.</p>
+            </div>
+            <div>
+                <h4>Links Legais</h4>
+                <a href="#termos" class="legal-link">Termos de Uso</a>
+                <a href="#privacidade" class="legal-link">Política de Privacidade</a>
+            </div>
+        </div>
+
+        <div id="termos" class="legal-section">
+            <h3>Termos de Uso</h3>
+            <p>Ao acessar este site, você concorda em cumprir estes termos de serviço, todas as leis e regulamentos aplicáveis. O conteúdo deste site, incluindo textos e imagens, é de propriedade intelectual de Débora Rodrigues de Souza. É proibida a reprodução total ou parcial para fins comerciais sem autorização prévia. O uso indevido das informações aqui contidas é de responsabilidade exclusiva do usuário.</p>
+        </div>
+
+        <div id="privacidade" class="legal-section">
+            <h3>Política de Privacidade</h3>
+            <p>A sua privacidade é importante para nós. É política de Débora Rodrigues de Souza respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site. Coletamos informações pessoais (como nome, e-mail e telefone) apenas quando necessário para fornecer um serviço solicitado. Não compartilhamos informações de identificação pessoal publicamente ou com terceiros, exceto quando exigido por lei. O usuário tem o direito de solicitar a exclusão de seus dados a qualquer momento através dos canais de contato.</p>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Débora Rodrigues de Souza - Todos os direitos reservados. Curitiba, PR.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
